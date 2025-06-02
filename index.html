@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduNepal – Empowering Nepal's Learners</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header Styling */
+    .site-header {
+      background: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: slideDown 1s ease-out;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 10px;
+      margin-left: 133px;
+    }
+
+    .logo {
+      height: 55px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .nav-links a {
+      color: #2c3e50;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #0077cc;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-60px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #0077cc, #005999);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .hero-btn {
+      background: #fff;
+      color: #005999;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .hero-btn:hover {
+      background: #f1f1f1;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .categories, .resources, .updates {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #fff;
+      color: #333;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-main {
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      margin: 10px 0;
+    }
+
+    .footer-links a {
+      color: #0077cc;
+      margin: 0 15px;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #005999;
+    }
+
+    .footer-description {
+      margin: 20px 0;
+      font-size: 1rem;
+    }
+
+    .footer-contact {
+      margin: 20px 0;
+      font-size: 1rem;
+    }
+
+    .footer-contact a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      color: #005999;
+    }
+
+    .newsletter {
+      margin: 20px 0;
+      background-color: #f8f8f8;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .newsletter form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .newsletter input {
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .newsletter button {
+      padding: 10px 15px;
+      background-color: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .newsletter button:hover {
+      background-color: #005999;
+    }
+
+    .social-media {
+      margin-top: 20px;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .newsletter input {
+        width: 200px;
+      }
+
+      .logo-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .tagline {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-section">
+      <img src="GTlogo.png" class="logo" />
+      <p class="tagline">"Unlock Knowledge, Build Skills, Shape Your Future – GTEduNepal Guides You Every Step, from School to Career Goals."</p>
+    </div>
+    <nav class="nav-links">
+      <a href="secondary.html">Secondary Level</a>
+      <a href="higher.html">+2 / College</a>
+      <a href="engineering.html">Diploma</a>
+      <a href="diploma.html">Pre-Diploma</a>
+      <a href="loksewa.html">Loksewa Preparation</a>
+      <a href="resources.html">Free Resources</a>
+      <a href="updates.html">Updates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to GTEduNepal</h2>
+    <p>Your trusted platform for academic and competitive exam preparation in Nepal.</p>
+    <a href="resources.html" class="hero-btn">Explore Our Resources</a>
+  </section>
+
+  <!-- Main Sections Omitted for Brevity -->
+  <!-- Insert your Categories, Resources, Updates, and Footer sections here -->
+ <section id="categories">
+    <h2 class="section-title">Popular Learning Paths</h2>
+    <div class="categories">
+      <!-- Card linking to secondary page -->
+      <a href="secondary.html" class="card">
+        <h3>Secondary Level</h3>
+        <p>Class 9 & 10 notes, questions, and practice sets for SEE exam.</p>
+      </a>
+      
+      <!-- Card linking to higher page -->
+      <a href="higher.html" class="card">
+        <h3>+2 / College</h3>
+        <p>Science, Management, and Humanities resources for Grade 11 & 12.</p>
+      </a>
+      
+      <!-- Card linking to engineering page -->
+      <a href="engineering.html" class="card">
+        <h3>Diploma/Pre-Diploma</h3>
+        <p>Entrance prep materials and course guides for BE, Civil, Computer & more.</p>
+      </a>
+
+      <!-- Card linking to Loksewa page -->
+      <a href="loksewa.html" class="card">
+        <h3>Loksewa</h3>
+        <p>MCQs, notes, syllabus, and current affairs for Loksewa preparation.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources">
+    <h2 class="section-title">Free Resources</h2>
+    <div class="resources">
+      <a href="resources.html" class="card">
+        <h3>Past Papers</h3>
+        <p>Download previous year exam papers for SEE, +2, and Loksewa.</p>
+      </a>
+      <a href="resources.html" class="card">
+        <h3>PDF Notes</h3>
+        <p>Get downloadable notes for all subjects in clear, easy-to-read format.</p>
+      </a>
+      <a href="resources.html" class="card">
+        <h3>Mock Tests</h3>
+        <p>Test your knowledge with real-time practice sets and scoring.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Updates Section -->
+  <section id="updates">
+    <h2 class="section-title">Latest Updates</h2>
+    <div class="updates">
+      <!-- Card linking to update1 page -->
+      <a href="update1.html" class="card">
+        <h3>SEE Exam Notice</h3>
+        <p>New SEE routine and guidelines published by NEB.</p>
+      </a>
+      
+      <!-- Card linking to update2 page -->
+      <a href="update2.html" class="card">
+        <h3>Loksewa Vacancy</h3>
+        <p>PSC has announced vacancies for section officer (nasu) 2081/82.</p>
+      </a>
+      
+      <!-- Card linking to update3 page -->
+      <a href="update3.html" class="card">
+        <h3>Scholarships</h3>
+        <p>Apply now for the IOE scholarship program (deadline this month).</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-main">
+        <p>&copy; 2025 GTEduNepal. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="about.html">About</a> |
+          <a href="privacy.html">Privacy</a> |
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+      <div class="footer-description">
+        <p><strong>GTEduNepal</strong> is dedicated to empowering students across Nepal, providing resources, guidance, and preparation for secondary education, college-level courses, and professional exams like Loksewa.</p>
+      </div>
+      <div class="footer-contact">
+        <p><strong>Contact Us:</strong></p>
+        <p>Email: <a href="mailto:info@edunepal.com">info@edunepal.com</a></p>
+        <p>Phone: +977 01-xxxxxxx</p>
+        <p>Address: Kathmandu, Nepal</p>
+      </div>
+      <div class="social-media">
+        <p>Follow us on:</p>
+        <a href="#"><img src="facebook.png" class="social-icon" alt="Facebook"></a>
+        <a href="#"><img src="x.png" class="social-icon" alt="Twitter"></a>
+        <a href="#"><img src="instagram.png" class="social-icon" alt="Instagram"></a>
+        
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("EduNepal header loaded.");
+    });
+  </script>
+
+</body>
+</html>
